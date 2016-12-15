@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+
+      <!-- Dialect -->
+      <property name="hibernate.dialect">
+          org.hibernate.dialect.MySQLDialect
+      </property>
+
+      <!-- Driver -->
+      <property name="hibernate.connection.driver_class">
+          com.mysql.jdbc.Driver
+      </property>
+
+      <!-- Database name -->
+      <property name="hibernate.connection.url">
+          jdbc:mysql://localhost/nvv
+      </property>
+
+      <!-- Username -->
+      <property name="hibernate.connection.username">
+          root
+      </property>
+
+      <!-- Password -->
+      <property name="hibernate.connection.password">
+
+      </property>
+
+      <!-- Creates al tables if not exist-->
+      <property name="hbm2ddl.auto">
+          update
+      </property>
+
+      <!-- Prints all SQL string -->
+      <property name="show_sql">
+          true
+      </property>
+
+
+      <!-- List of classes (tables) -->
+      <mapping class="Database.Users"/>
+
+
+  </session-factory>
+</hibernate-configuration>

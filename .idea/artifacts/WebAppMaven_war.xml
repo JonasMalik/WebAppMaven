@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="WebAppMaven:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="WebAppMaven.war">
+      <element id="artifact" artifact-name="WebAppMaven:war exploded" />
+    </root>
+  </artifact>
+</component>

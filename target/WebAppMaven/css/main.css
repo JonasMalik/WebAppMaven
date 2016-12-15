@@ -1,0 +1,78 @@
+body{
+    overflow-x: hidden;
+    background-color: whitesmoke;
+}
+#topMenu{
+  position: fixed;
+  top:0px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  width: 100%;
+  z-index:100;
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  box-shadow: 0px 1px 5px 0px black;
+}
+#header ul{
+  text-align: right;
+  min-width: 500px;
+}
+#header li{
+  display: inline-block;
+}
+#header li a {
+  display: inline-block;
+  color: darkgray;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.1;
+}
+#header li a:hover {
+  background-color: red;
+  color: white;
+  box-shadow: 0px 0px 5px 0px black;
+  border-bottom: #ffffff solid 2px;
+}
+#header li a.active {
+  background-color: red;
+  color: white;
+  box-shadow: 0px 0px 5px 0px black;
+  border-bottom: #ffffff solid 2px;
+}
+.right{
+
+  margin: 0%;
+}
+.left{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  display: inline-block;
+  margin: 0%;
+  margin-right: 5%;
+  color: whitesmoke;
+  z-index: 10;
+}
+
+.title{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  display: inline-block;
+  margin: 0%;
+  margin-right: 1%;
+  font-size: 100%;
+  z-index: 10;
+  color: darkgray;
+}
+
+#mainContainer{
+  margin-top: 60px;
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%;
+  opacity: 1;
+}

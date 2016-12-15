@@ -1,0 +1,20 @@
+/*=============== Form (validation) Style ===================*/
+
+#username:valid{
+    background: url("../img/green.png") no-repeat 99% 50%;
+    background-size: 4%;
+    border: 2px solid green;
+}
+
+#password:valid{
+    background: url("../img/green.png") no-repeat 99% 50%;
+    background-size: 4%;
+    border: 2px solid green;
+}
+
+#inputPos{
+    background: url("../img/green.png") no-repeat 99% 50%;
+    background-size: 4%;
+    border: 2px solid green;
+}
+
