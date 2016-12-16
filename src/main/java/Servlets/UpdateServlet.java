@@ -19,10 +19,10 @@ import java.io.IOException;
 public class UpdateServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
-        // Getting an instance of a SessionFactory
+        // Getting instance
         SessionFactory sessionFactory = MyFactories.getInstance().getSessionFactory();
-        //HqlQueries hql = HqlQueries.getInstance();
 
+        // Getting form data
         String StringId =  request.getParameter("id").trim();
         int id =  Integer.parseInt(StringId);
         String newName = request.getParameter("name");
@@ -30,7 +30,6 @@ public class UpdateServlet extends HttpServlet {
         String newPassword = request.getParameter("password");
         String newRole = request.getParameter("role");
 
-        System.out.println(newRole);
         // Creating user
         Users users = new Users();
         users.setId(id);
@@ -43,14 +42,14 @@ public class UpdateServlet extends HttpServlet {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 
-        // Delete from database
+        // Update user
         session.update(users);
         session.getTransaction().commit();
 
         // Closing database connection
         session.close();
 
-
+        // Redirect
         resp.sendRedirect("/Profile");
     }
 }

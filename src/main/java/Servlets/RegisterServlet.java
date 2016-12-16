@@ -14,13 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/RegisterServlet")
+@WebServlet(name = "RegisterServlet", urlPatterns = "/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Getting an instance of a SessionFactory
+		// Getting instance
 		SessionFactory sessionFactory = MyFactories.getInstance().getSessionFactory();
-		HqlQueries hql = HqlQueries.getInstance();
 
 		// Requests form data
 		String email = request.getParameter("email");

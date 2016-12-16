@@ -19,16 +19,12 @@ import java.io.IOException;
 public class DeleteServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // Getting an instance of a SessionFactory
+        // Getting instance
         SessionFactory sessionFactory = MyFactories.getInstance().getSessionFactory();
-        //HqlQueries hql = HqlQueries.getInstance();
 
+        // Request form data
         String StringId =  req.getParameter("id").trim();
         int id =  Integer.parseInt(StringId);
-        //String newName = request.getParameter("name");
-        //String newEmail = request.getParameter("email");
-        //String newPassword = request.getParameter("password");
-        //String newRole = request.getParameter("role");
 
         // Creating user
         Users users = new Users();
@@ -45,7 +41,7 @@ public class DeleteServlet extends HttpServlet {
         // Closing database connection
         session.close();
 
-
+        // Redirect
         resp.sendRedirect("/Profile");
     }
 }

@@ -11,6 +11,7 @@
         List<Users> results;
         String search = "";
 
+        // Checking session variable
         if (request.getSession().getAttribute("search") == null) {
             search = "";
         }else {
@@ -25,7 +26,7 @@
     <%
 
 
-        // Getting an instance of a SessionFactory
+        // Getting instances
         SessionFactory sessionFactory = MyFactories.getInstance().getSessionFactory();
         HqlQueries hql = HqlQueries.getInstance();
 
@@ -33,8 +34,6 @@
         Session conn = sessionFactory.openSession();
         conn.beginTransaction();
 
-
-        System.out.println(request.getSession().getAttribute("search"));
         // Creating query
         Query query = conn.createQuery(hql.getShowDatabase())
                               .setParameter("search", "%"+search+"%");
@@ -45,6 +44,7 @@
         // Closing database connection
         conn.close();
 
+        // Printing table header
         out.println("<table id='table1'>");
         out.println("<tr>");
         out.println("<th>Id</th>");
@@ -52,6 +52,7 @@
         out.println("<th>E-post</th>");
         out.println("<th>Behörighet</th>");
 
+        // Printing table content
         for (int i = 0; i<results.size(); i++){
             out.println("<tr>");
 

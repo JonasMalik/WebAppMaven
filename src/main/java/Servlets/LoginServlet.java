@@ -19,7 +19,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 
-@WebServlet("/LoginServlet")
+@WebServlet(name = "LoginServlet", urlPatterns = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
     
     public LoginServlet() {
@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Getting an instance of a SessionFactory
+		// Getting instances
 		SessionFactory sessionFactory = MyFactories.getInstance().getSessionFactory();
 		HqlQueries hql = HqlQueries.getInstance();
 
@@ -55,10 +55,9 @@ public class LoginServlet extends HttpServlet {
 			httpSession.setAttribute("Role", users.getRole());
 			response.sendRedirect("/Profile");
 		}else{
-			RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
-			PrintWriter out= response.getWriter();
-			out.println("<font color=red>No user found with given email id, please register first.</font>");
-			rd.include(request, response);
+
+			// Redirect if user not found
+			response.sendRedirect("/login.jsp");
 		}
 
 		// Closing database connection

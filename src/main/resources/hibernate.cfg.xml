@@ -29,8 +29,8 @@
       <property name="hibernate.connection.password">
 
       </property>
-
-      <!-- Creates al tables if not exist-->
+      
+      <!-- Creates all tables if not exist-->
       <property name="hbm2ddl.auto">
           update
       </property>

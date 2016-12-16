@@ -18,6 +18,8 @@
             <h1>Registrerade konton</h1>
             <%
                 String includes = null;
+
+                // Checking user role
                 if(request.getSession().getAttribute("Role").equals("ROLE_ADMIN")){
                     includes = "admins_table.jsp";
                 }else {

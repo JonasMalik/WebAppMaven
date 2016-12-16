@@ -5,6 +5,7 @@
     String role;
 %>
 <%
+    // Checking if user is logged in
     if (request.getSession().getAttribute("User")== null){
         login = "Logga in";
     }else{
@@ -14,9 +15,14 @@
 <div id="header">
     <ul id="topMenu">
         <%
+            // Checking if user is logged in
             if (request.getSession().getAttribute("User")!= null){
+
+                // Getting session variables
                 name = request.getSession().getAttribute("User").toString();
                 role = request.getSession().getAttribute("Role").toString();
+
+                // Printing user information
                 out.print("<h3 class='title'>Inloggad som:</h3>");
                 out.print("<h3 class='left'>");
                 out.print(name);

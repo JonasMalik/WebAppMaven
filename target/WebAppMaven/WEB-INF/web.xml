@@ -5,28 +5,4 @@
   <welcome-file-list>
     <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
-
-  <context-param>
-    <param-name>dbUser</param-name>
-    <param-value>root</param-value>
-  </context-param>
-  <context-param>
-    <param-name>dbPassword</param-name>
-    <param-value></param-value>
-  </context-param>
-  <context-param>
-    <param-name>dbURL</param-name>
-    <param-value>jdbc:mysql://localhost/UserDB</param-value>
-  </context-param>
-
-  <servlet>
-    <servlet-name>DelServlet</servlet-name>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DelServlet</servlet-name>
-    <url-pattern>/DelServlet</url-pattern>
-  </servlet-mapping>
-
-
-
 </web-app>

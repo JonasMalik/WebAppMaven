@@ -20,7 +20,7 @@
 #search{
     display: inline-block;
     width: 88%;
-    padding-right: 0%;
+    padding: 1% 10% 1% 2%;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 120%;
